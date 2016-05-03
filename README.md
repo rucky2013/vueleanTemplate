@@ -1,9 +1,54 @@
 # vue and LeanCloud 前后端单独启动server
 
-## 后端server  Lean命令行
+## 【1】后端server  Lean命令行
+
+* ①新建项目
+
+```
+lean new oneapp
+cd oneapp
+npm install
+lean up
+```
+
+测试成功
+
+* ②优化后端目录结构为
+
+```
+- server.js    // 入口js
+- package.json
++ backend/     // 后端文件夹
+  + cloud/     // 云函数文件夹
+  + public/    // 后端静态资源文件夹
+  + routes/    // 路由文件夹
+  + views/     // 视图文件夹
+  - app.js     // 入口文件
+  - cloud.js   // 云函数列表文件
+
+```
+
+* 修改server.js 中 app.js的引用
+
+```
+var app = require('./backend/app');
+```
 
 
-## 前端server  vue-cli命令行
+## 【2】前端server  vue-cli命令行
+
+* ①新增前端项目
+
+```
+vue init webpack-simple fe
+cd fe
+npm install
+npm run dev
+```
+
+测试成功
+
+
 
 ## 相关文档
 
