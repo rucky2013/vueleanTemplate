@@ -10,13 +10,13 @@
 </template>
 
 <script>
-import ProductList from '../components/Shoppingcart/ProductList'
-import Cart from '../components/Shoppingcart/Cart'
+import ProductList from '../components/Shoppingcart/ProductList.vue'
+import Cart from '../components/Shoppingcart/Cart.vue'
 export default {
   components: { ProductList, Cart }
 }
 </script>
 
-<style lang="sass">
-  
+<style>
+
 </style>

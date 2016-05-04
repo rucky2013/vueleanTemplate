@@ -8,6 +8,7 @@
 
 <script>
 import navbar from './common/Nav.vue'
+import store from './store/store'
 export default {
   data () {
     return {
@@ -18,6 +19,7 @@ export default {
       msg: 'Hello Vue!'
     }
   },
+  store,
   components: {
     navbar
   }

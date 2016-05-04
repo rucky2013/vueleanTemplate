@@ -6,7 +6,7 @@ import Notfound from '../common/404.vue'
 import home from '../views/home.vue'
 import discovery from '../views/discovery.vue'
 import about from '../views/about.vue'
-
+import shop from '../views/Shoppingcart.vue'
 
 export default function(router){
     router.map({
@@ -24,6 +24,9 @@ export default function(router){
     },
     '/about': {
       component: about
+    },
+    '/shop': {
+      component: shop
     },
     /* 404路由 */
     '*': {

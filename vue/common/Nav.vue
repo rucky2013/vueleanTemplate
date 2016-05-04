@@ -20,6 +20,7 @@
           <li><a v-link="'/home'">home</a></li>
           <li><a v-link="'/discovery'">discovery</a></li>
           <li><a v-link="'/about'">about</a></li>
+          <li><a v-link="'/shop'">shop</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

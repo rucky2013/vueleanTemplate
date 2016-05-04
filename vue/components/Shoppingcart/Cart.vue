@@ -15,7 +15,7 @@
 
 <!--<style lang=scss> 了，而不是 <style lang="sass">-->
 <!--需要单独 npm i sass-loader node-sass --save-dev -->
-<style lang=scss>
+<style>
 .youcart{
   color:#e66;
 }
