@@ -15,9 +15,11 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li class="active"><a v-link="'home'">home</a></li>
-          <li><a v-link="'discovery'">discovery</a></li>
-          <li><a v-link="'about'">about</a></li>
+          <li class="active"><a v-link="'/'">Addcommunity</a></li>
+          <li><a v-link="'/test'">Test</a></li>
+          <li><a v-link="'/home'">home</a></li>
+          <li><a v-link="'/discovery'">discovery</a></li>
+          <li><a v-link="'/about'">about</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
