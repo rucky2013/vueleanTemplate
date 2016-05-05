@@ -1,7 +1,7 @@
-var path = require('path')
-var webpack = require('webpack')
+var path                = require('path')
+var webpack             = require('webpack')
 
-var publicPath = 'http://localhost:3000/public';
+var publicPath          = 'http://localhost:3000/public';
 var hotMiddlewareScript = 'webpack-hot-middleware/client?reload=true';
 
 module.exports = {
