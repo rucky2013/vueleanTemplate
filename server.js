@@ -1,31 +1,31 @@
 'use strict';
 
-var express = require('express');
-var AV = require('leanengine');
-var path = require('path');
+var express     = require('express');
+var AV          = require('leanengine');
+var path        = require('path');
 
-var APP_ID = process.env.LC_APP_ID;
-var APP_KEY = process.env.LC_APP_KEY;
-var MASTER_KEY = process.env.LC_APP_MASTER_KEY;
+var APP_ID      = process.env.LC_APP_ID;
+var APP_KEY     = process.env.LC_APP_KEY;
+var MASTER_KEY  = process.env.LC_APP_MASTER_KEY;
 
 AV.initialize(APP_ID, APP_KEY, MASTER_KEY);
 // 如果不希望使用 masterKey 权限，可以将下面一行删除
 AV.Cloud.useMasterKey();
 
-var app = require('./server/app');
+var app           = require('./server/app');
 
-app.locals.env = process.env.NODE_ENV || 'dev';
+app.locals.env    = process.env.NODE_ENV || 'dev';
 app.locals.reload = true;
 
-var isDev = process.env.NODE_ENV === 'dev';
+var isDev         = process.env.NODE_ENV === 'dev';
 //for dev
 if(isDev){
-  var webpack = require('webpack'),
-      webpackDevMiddleware = require('webpack-dev-middleware'),
-      webpackHotMiddleware = require('webpack-hot-middleware'),
-      webpackDevConfig = require('./webpack.config.js');
+  var webpack              = require('webpack')
+  var webpackDevMiddleware = require('webpack-dev-middleware')
+  var webpackHotMiddleware = require('webpack-hot-middleware')
+  var webpackDevConfig     = require('./webpack.config.js')
 
-  var compiler = webpack(webpackDevConfig);
+  var compiler             = webpack(webpackDevConfig);
 
   app.use(webpackDevMiddleware(compiler, {
 
@@ -39,10 +39,10 @@ if(isDev){
   app.use(webpackHotMiddleware(compiler));
   app.use(express.static(path.join(__dirname, './public')))
   // add "reload" to express, see: https://www.npmjs.com/package/reload
-  var reload = require('reload');
-  var http = require('http');
+  var reload  = require('reload');
+  var http    = require('http');
 
-  var server = http.createServer(app);
+  var server  = http.createServer(app);
   reload(server, app);
 
   server.listen(3000, function(){
